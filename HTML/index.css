@@ -1,0 +1,17 @@
+h1{
+    color : green;
+}
+.one{
+    color : blue;
+}
+.two{
+    color: aqua;
+}
+div h1 span{
+    color : black;
+}
+.one.two{
+    color:aqua;
+}
+input[value="select me"]{background-color : blue;color:white}
+

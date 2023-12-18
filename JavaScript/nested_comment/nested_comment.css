@@ -1,0 +1,14 @@
+.big-box{
+    height : 500px;
+    width : 500px;
+    background-color: rgba(36, 227, 154, 0.991);
+    display : flex;
+    justify-content: center;
+    align-items: center;
+    justify-content: space-evenly;
+}
+.small-box{
+    height : 100px;
+    width : 100px;
+    background-color:bisque;
+}

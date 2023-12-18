@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Grid</title>
+</head>
+<style>
+    .container{
+        display: grid;  
+        grid-template-columns: 20vw 40vw 70vw; 
+        grid-template-rows: 100px 200px 200px 30px;
+        grid-gap : 10px;
+    }
+    .item{
+        background-color: yellow;
+        color: brown;
+        border: 5px solid rgb(181, 41, 41);
+        border-radius: 2px;
+    }
+    #select{
+        grid-row: span 2;
+        /* grid-row-end: 5; */
+        /* grid-column-start: 2; */
+        grid-column: span 2;
+    }
+    .dabbaindabba{
+        display: grid;
+    }
+    .nesting{
+        background-color: greenyellow;
+        border : 2px solid blue;
+        border-radius: 10px;
+    }
+</style>
+<body>
+    <div class="container">
+        <div class="item">Loventore doloum.</div>
+        <div class="item">2</div>
+        <div class="item">3</div>
+        <div class="item">4</div>
+        <div class="item">5</div>
+        <div class="item">6</div>
+        <div class="item dabbaindabba">
+            <div class="nesting">box lo box</div>
+            <div class="nesting">box lo box</div>
+            <div class="nesting">box lo box</div>
+        </div>
+        <div class="item">8</div>
+        <div class="item">9</div>
+        <div class="item" id="select">0</div>
+    </div>
+</body>
+</html>
