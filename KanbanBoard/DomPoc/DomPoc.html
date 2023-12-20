@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DomPoc</title>
+    <style>
+        div{
+            height : 200px;
+            width: 200px;
+            background-color: red;
+            margin: 10px;
+        }
+        .active{
+            border: 5px solid black;
+        }
+    </style>
+</head>
+<body>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+</body>
+<script>
+
+    let divs = document.querySelectorAll('div');
+    divs.forEach(div => {
+        div.addEventListener('click', () => {
+            divs.forEach(div => {
+                div.classList.remove('active');
+            }); 
+            div.classList.add('active');
+        });
+    });
+    
+</script>
+</html>

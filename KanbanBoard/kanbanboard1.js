@@ -9,7 +9,8 @@ addBtn.addEventListener('click', function() {
     console.log("Btn has been clicked")
     if (addModal) {
         modal.style.display = 'flex'; //show modal
-    } else {
+    } 
+    else{
         modal.style.display = 'none'; //hide modal
     }
     addModal = !addModal;
@@ -59,9 +60,10 @@ textArea.addEventListener('keydown', function(e) {
 function generateTicket() {
     let ticketCont = document.createElement('div');
     text = textArea.value;
+    var uid = new ShortUniqueId();
     ticketCont.classList.add('ticket-cont');
     ticketCont.innerHTML = `<div class="ticket-color ${selectedColor}"></div>
-    <div class="ticket-id">#123</div>
+    <div class="ticket-id">#${uid.rnd()}</div>
     <div class="ticket-desc">${text}</div>`;
     mainCont.appendChild(ticketCont);
     console.log("Ticket has been generated");
