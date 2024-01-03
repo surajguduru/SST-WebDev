@@ -4,9 +4,10 @@ let addModal = true;
 let textArea = document.querySelector('.modal-cont textarea');
 let mainCont = document.querySelector('.main-cont');
 let allPriorityColor = document.querySelector('.priority-color');
+let lock = document.querySelector('.lock');
 
 addBtn.addEventListener('click', function() {
-    console.log("Btn has been clicked")
+    console.log("Add-Btn has been clicked")
     if (addModal) {
         modal.style.display = 'flex'; //show modal
     } 
@@ -64,7 +65,26 @@ function generateTicket() {
     ticketCont.classList.add('ticket-cont');
     ticketCont.innerHTML = `<div class="ticket-color ${selectedColor}"></div>
     <div class="ticket-id">#${uid.rnd()}</div>
-    <div class="ticket-desc">${text}</div>`;
+    <div class="ticket-area">${text}</div>
+    <div class="lock"><i class="fa-solid fa-lock"></i></div>`;
     mainCont.appendChild(ticketCont);
     console.log("Ticket has been generated");
+
+    let lock = ticketCont.querySelector('.lock'); 
+    let taskArea = ticketCont.querySelector('.ticket-area');
+    lock.addEventListener('click', function() {
+        let lockIcon = lock.querySelector('i.fa-solid'); 
+        if (lockIcon.classList.contains('fa-lock-open')) {
+            lockIcon.classList.remove('fa-lock-open');
+            lockIcon.classList.add('fa-lock');
+            taskArea.setAttribute('contenteditable', 'false');
+        } 
+        else {
+            lockIcon.classList.remove('fa-lock');
+            lockIcon.classList.add('fa-lock-open');
+            taskArea.setAttribute('contenteditable', 'true');
+        }
+        console.log("Lock-Button has been toggled");
+    });
 }
+

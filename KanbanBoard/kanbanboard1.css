@@ -56,6 +56,12 @@
 .add-btn{
     font-size: 1.75rem;
 }
+.add-btn:hover{
+    cursor: pointer;
+}
+.add-btn{
+    margin-right: 3vh;
+}
 .remove-btn{
     font-size: 1.5rem;
 }
@@ -113,6 +119,7 @@
     height: 10rem;
     width: 15rem;
     background-color:cornsilk;
+    position: relative;
 }
 
 .ticket-color{
@@ -131,7 +138,13 @@
     font-size: 1.25rem;
 }
 
-
-
+.lock {
+    position : absolute;
+    right : 1vh;
+    bottom : 1vh;
+}
+.lock:hover {
+    cursor : pointer;
+}
 
 

@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box {
+            height: 150px;
+            width: 150px;
+            background-color: violet;
+            margin: 10px;
+            border: 3px solid salmon;
+        }
+        .container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="box"></div>
+        <div class="box"></div>
+        <div class="box"></div>
+        <div class="box"></div>
+        <div class="box"></div>
+        <div class="box"></div>
+        <div class="box"></div>
+        <div class="box"></div>
+        <div class="box"></div>
+        <div class="box"></div>
+        <div class="box"></div>
+    </div>
+</body>
+<script>
+    let container = document.querySelector('.container');
+    let boxes = document.querySelectorAll('.box');
+    let i = 0;
+    boxes.forEach(box => {
+        box.addEventListener('mouseover', () => {
+            box.style.backgroundColor = 'red';
+        });
+        box.addEventListener('mouseout', () => {
+            box.style.backgroundColor = 'violet';
+        });
+        box.addEventListener('click', () => {
+            if (box.style.display != 'none') {
+                box.style.display = 'none';
+                
+            } 
+        });
+    });
+    
+</script>
+
+</html>

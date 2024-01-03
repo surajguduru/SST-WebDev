@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"> 
+    <style>
+        body{
+            background-color: #7c0c96;
+        }
+        div{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 80vh;
+            /* width: 100vw; */
+        }
+        .sad{
+            display: none;
+        }
+    </style>   
+</head>
+<body>
+    <div class="container">
+        <div class="happy">
+            <i class="fa-solid fa-face-laugh-wink" style="font-size: 5em;"></i>
+        </div>
+        <div class="sad">
+            <i class="fa-solid fa-face-sad-tear" style="font-size: 5em;"></i>
+        </div>
+    </div>
+    <script>
+        let div = document.querySelector('.container');
+        let happy = document.querySelector('.happy');
+        let sad = document.querySelector('.sad');
+        let i = 0;
+        div.addEventListener('mouseover', () => {
+            cursor.style.display = 'pointer';
+        });
+        div.addEventListener('click', () => {
+            if(i == 0){
+                happy.style.display = 'none';
+                sad.style.display = 'flex';
+                i = 1;
+            }
+            else{
+                sad.style.display = 'none';
+                happy.style.display = 'flex';
+                i = 0;
+            }
+        });
+    </script>
+</body>
+</html>
