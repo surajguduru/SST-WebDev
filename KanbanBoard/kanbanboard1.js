@@ -5,6 +5,39 @@ let textArea = document.querySelector('.modal-cont textarea');
 let mainCont = document.querySelector('.main-cont');
 let allPriorityColor = document.querySelector('.priority-color');
 let lock = document.querySelector('.lock');
+let colorArr = ['red', 'blue', 'green', 'pink'];
+let filterColor = document.querySelectorAll('.color');
+
+for(let i=0;i<filterColor.length;i++){
+    filterColor[i].addEventListener('click',function(){
+        let color = filterColor[i].classList[1];
+        filterTickets(color);
+    });
+};
+for(let i=0;i<filterColor.length;i++){
+    filterColor[i].addEventListener('dblclick',function(){
+        filterTickets('black');
+    });
+}
+function filterTickets(color){
+    let tickets = document.querySelectorAll('.ticket-cont');
+    if(color == 'black'){
+        for(let i=0;i<tickets.length;i++){
+            tickets[i].style.display = 'block';
+        }
+    }
+    else{
+        for(let i=0;i<tickets.length;i++){
+            let ticketColor = tickets[i].querySelector('.ticket-color');
+            if(ticketColor.classList.contains(color)){
+                tickets[i].style.display = 'block';
+            }
+            else{
+                tickets[i].style.display = 'none';
+            }
+        }
+    }
+}
 
 addBtn.addEventListener('click', function() {
     console.log("Add-Btn has been clicked")
@@ -70,6 +103,18 @@ function generateTicket() {
     mainCont.appendChild(ticketCont);
     console.log("Ticket has been generated");
 
+    //Handle Priority Color
+    let ticketColor = ticketCont.querySelector('.ticket-color');
+    ticketColor.addEventListener('click', function() {
+        let currColor = ticketColor.classList[1];
+        let index = colorArr.indexOf(currColor);
+        let nextIndex = (index + 1) % 4;
+        let nextColor = colorArr[nextIndex];
+        ticketColor.classList.remove(currColor);
+        ticketColor.classList.add(nextColor);
+    });
+
+    //Handle Lock Button
     let lock = ticketCont.querySelector('.lock'); 
     let taskArea = ticketCont.querySelector('.ticket-area');
     lock.addEventListener('click', function() {
