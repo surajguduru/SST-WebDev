@@ -1,0 +1,50 @@
+/* Your task is to implement a collapsible sidebar for a web application. */
+/* You have two main div elements provided in the HTML: a sidebar (#sidebar) and a main content area (#main-content).
+The sidebar should start fully expanded with a width of 250px. The main content should be displayed to the right, filling the rest of the viewport width.
+Include a button (#toggle-button) within the sidebar that will toggle its expanded and collapsed states.
+The sidebar should collapse to a width of 80px when the toggle button is clicked and expand back to 250px when clicked again.
+The main content area should adjust its position so it's always visible and using the available space next to the sidebar (it should have a padding of 80px).
+Apply CSS to enhance the visual appearance according to the specifications given.
+Specifications
+The sidebar should have a background color of #34495e and contain white text. It should also have a padding of 15px 30px
+The toggle button should have a background color of #e74c3c, which changes to #c0392b when hovered over.
+The main content area should have a background color of #f1c40f.
+Instructions for Implementation
+Write JavaScript code in script.js to add the toggle functionality to the sidebar.
+Write CSS in style.css to style the sidebar, the toggle button, and the main content area according to the given specifications.
+Ensure the main content area adjusts its position dynamically when the sidebar is toggled.
+Example Behavior
+Initially, the sidebar is fully expanded with a width of 250px.
+Clicking the #toggle-button collapses the sidebar to 80px, allowing the main content area to use the additional space.
+Clicking the #toggle-button again expands the sidebar back to 250px. */
+body{   
+    display: flex;
+}
+#sidebar{
+    background-color: #34495e;
+    color: white;
+    padding: 15px 30px;
+    width: 250px;
+    transition: width 0.5s;
+    height : 100vh;
+}
+#toggle-button:hover{
+    background-color: #c0392b;
+}
+#main-content{
+    background-color: #f1c40f;
+    padding: 80px;
+    width: calc(100% - 250px);
+    transition: width 0.5s;
+}
+
+#toggle-button{
+    background-color: #e74c3c;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    margin: 10px 0;
+    cursor: pointer;
+    transition: background-color 0.5s;
+}

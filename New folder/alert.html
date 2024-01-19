@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+
+      /* WRITE THE CSS PROGRAM HERE ==================================================================== */
+      .red {
+        background-color: red;
+      }
+      .green {
+        background-color: green;
+      }
+    </style>
+  </head>
+  <body>
+    <p>
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi dolores,
+      rerum repudiandae enim consectetur consequatur quae recusandae,
+      perferendis at quod illum, deleniti similique a eius nulla architecto
+      earum. Iure, deleniti.
+    </p>
+    <p>
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi dolores,
+      rerum repudiandae enim consectetur consequatur quae recusandae,
+      perferendis at quod illum, deleniti similique a eius nulla architecto
+      earum. Iure, deleniti.
+    </p>
+    <p>
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi dolores,
+      rerum repudiandae enim consectetur consequatur quae recusandae,
+      perferendis at quod illum, deleniti similique a eius nulla architecto
+      earum. Iure, deleniti.
+    </p>
+    <script>
+      // WRITE THE JS PROGRAM HERE ====================================================================
+//       Write a program in JavaScript,
+// that implements the following behaviour on the above p tags:
+
+// 1. single clicking highlights them with red color
+// 2. double clicking highlights them with green color
+// 3. triple removes the highlights
+
+// Note:
+// Here highlight means to set the background of the element to a desired color.
+        const pTags = document.querySelectorAll("p");
+        const highlight = (event) => {
+            const p = event.currentTarget;
+            if (p.classList.contains("red")) {
+            p.classList.remove("red");
+            } else {
+            p.classList.add("red");
+            }
+        };
+        const highlightGreen = (event) => {
+            const p = event.currentTarget;
+            if (p.classList.contains("green")) {
+            p.classList.remove("green");
+            } else {
+            p.classList.add("green");
+            }
+        };
+        const removeHighlight = (event) => {
+            const p = event.currentTarget;
+            p.classList.remove("red");
+            p.classList.remove("green");
+        };
+        const singleClick = (event) => {
+            const p = event.currentTarget;
+            p.addEventListener("click", highlight);
+            setTimeout(() => {
+            p.removeEventListener("click", highlight);
+            }, 500);
+        };
+        const doubleClick = (event) => {
+            const p = event.currentTarget;
+            p.addEventListener("dblclick", highlightGreen);
+            setTimeout(() => {
+            p.removeEventListener("dblclick", highlightGreen);
+            }, 500);
+        };
+        const tripleClick = (event) => {
+            const p = event.currentTarget;
+            p.addEventListener("click", removeHighlight);
+            setTimeout(() => {
+            p.removeEventListener("click", removeHighlight);
+            }, 500);
+        };
+        pTags.forEach((p) => {
+            p.addEventListener("click", singleClick);
+            p.addEventListener("dblclick", doubleClick);
+            p.addEventListener("click", tripleClick);
+        });
+
+    </script>
+  </body>
+</html>
