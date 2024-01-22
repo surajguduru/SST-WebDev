@@ -10,9 +10,8 @@ arr.pop(); // This will work fine
 function fxn(num,obj){
     num = 20;
     console.log("Inside fxn ->",num);
-    obj.city = "Mysore";
+    obj = {name : "Ramesh", age : "20"};
     console.log("Inside fxn ->",obj);
-
 }
 
 let b = 10;
